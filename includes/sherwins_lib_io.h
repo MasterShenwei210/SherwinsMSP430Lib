@@ -8,8 +8,6 @@
 #ifndef INCLUDES_SHERWINS_LIB_IO_H_
 #define INCLUDES_SHERWINS_LIB_IO_H_
 
-#include "msp430.h"
-
 void setPortDirections(unsigned char port, unsigned char bits);
 void setPinOutput(unsigned char port, unsigned char pin);
 void setPinInput(unsigned char port, unsigned char pin);
@@ -23,7 +21,8 @@ void writePinOutput(unsigned char port, unsigned char pin, bool state);
 unsigned char readPortInput(unsigned char port);
 bool readPinInput(unsigned char port, unsigned char pin);
 
-void enableHighToLowInterrupt(unsigned char port, unsigned char pin, void (*isr)());
-void enableLowToHighInterrupt(unsigned char port, unsigned char pin, void (*isr)());
+void enableHighToLowInterrupt(unsigned char port, unsigned char pin);
+void enableLowToHighInterrupt(unsigned char port, unsigned char pin);
+void setISR(unsigned char port);
 
 #endif /* INCLUDES_SHERWINS_LIB_IO_H_ */
