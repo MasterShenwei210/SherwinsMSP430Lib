@@ -15,7 +15,6 @@ void setPortDirections(unsigned char port, unsigned char bits);
 void setPinOutput(unsigned char port, unsigned char pin);
 void setPinInput(unsigned char port, unsigned char pin);
 void setPullDownResistor(unsigned char port, unsigned char pin);
-
 void setPullUpResistor(unsigned char port, unsigned char pin);
 
 void writePortOutput(unsigned char port, unsigned char bits);
@@ -29,5 +28,6 @@ void enableHighToLowInterrupt(unsigned char port, unsigned char pin);
 void enableLowToHighInterrupt(unsigned char port, unsigned char pin);
 void setISR(unsigned char port, void (*isr)(void));
 void resetFlag(unsigned char port, unsigned char pin);
+unsigned char getPinAndResetFlag(unsigned char port);
 
 #endif /* INCLUDES_SHERWINS_LIB_IO_H_ */
