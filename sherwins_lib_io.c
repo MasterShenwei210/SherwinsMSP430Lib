@@ -401,11 +401,45 @@ void resetFlag(unsigned char port, unsigned char pin) {
 unsigned char getPinAndResetFlag(unsigned char port) {
 #if MSP == F5529 || MSP == G2231
     if (port == 1) {
-        unsigned char temp = P1IV;
-        return (temp / 2) - 1;
+        unsigned int temp = P1IV;
+        if (temp == 2) {
+            return 0;
+        } else if (temp == 4) {
+            return 1;
+        } else if (temp == 6) {
+            return 2;
+        } else if (temp == 8) {
+            return 3;
+        } else if (temp == 10) {
+            return 4;
+        } else if (temp == 12) {
+            return 5;
+        } else if (temp == 14) {
+            return 6;
+        } else if (temp == 16) {
+            return 7;
+        }
+        return 0;
     } else if (port == 2) {
-        unsigned char temp = P2IV;
-        return (P2IV / 2) - 1;
+        unsigned int temp = P1IV;
+        if (temp == 2) {
+            return 0;
+        } else if (temp == 4) {
+            return 1;
+        } else if (temp == 6) {
+            return 2;
+        } else if (temp == 8) {
+            return 3;
+        } else if (temp == 10) {
+            return 4;
+        } else if (temp == 12) {
+            return 5;
+        } else if (temp == 14) {
+            return 6;
+        } else if (temp == 16) {
+            return 7;
+        }
+        return 0;
     }
 
 #endif
