@@ -16,13 +16,15 @@ void setPullDownResistor(unsigned char port, unsigned char pin);
 void setPullUpResistor(unsigned char, port, unsigned char pin);
 
 void writePortOutput(unsigned char port, unsigned char bits);
-void writePinOutput(unsigned char port, unsigned char pin, bool state);
+void writePinHigh(unsigned char port, unsigned char pin);
+void writePinLow(unsigned char port, unsigned char pin);
+void togglePin(unsigned char port, unsigned char pin);
 
-unsigned char readPortInput(unsigned char port);
-bool readPinInput(unsigned char port, unsigned char pin);
+unsigned char readPinInput(unsigned char port, unsigned char pin);
 
 void enableHighToLowInterrupt(unsigned char port, unsigned char pin);
 void enableLowToHighInterrupt(unsigned char port, unsigned char pin);
-void setISR(unsigned char port);
+void setISR(unsigned char port, void (*isr)(void));
+void resetFlag(unsigned char port, unsigned char pin);
 
 #endif /* INCLUDES_SHERWINS_LIB_IO_H_ */
