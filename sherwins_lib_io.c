@@ -6,17 +6,6 @@
  */
 #include <sherwins_lib_io.h>
 
-#if defined (__MSP430F5529__)
-#define MSP     0
-
-#elif defined (__MSP430G2231__)
-#define MSP     1
-
-#endif
-
-#define F5529   0
-#define G2231   1
-
 void (*port_1_isr)(void);
 void (*port_2_isr)(void);
 

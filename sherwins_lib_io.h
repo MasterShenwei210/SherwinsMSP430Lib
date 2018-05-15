@@ -10,6 +10,17 @@
 
 #include <msp430.h>
 
+#if defined (__MSP430F5529__)
+#define MSP     0
+
+#elif defined (__MSP430G2231__)
+#define MSP     1
+
+#endif
+
+#define F5529   0
+#define G2231   1
+
 void setPortDirections(unsigned char port, unsigned char bits);
 
 void setPinOutput(unsigned char port, unsigned char pin);

@@ -1,0 +1,23 @@
+MSP430X5XXXX
+	5 clock sources
+		1) XT1CLK: low or high frequency oscillator for external source
+		2) VLOCLK: internal very low power oscillator (~10kHz)
+		3) REFCLOCK: internal trimmed, 32768 typical frequency
+		4) DCOCLK: internal digitally controlled oscillator
+		5) XT2CLK: optional high frequerncy oscillator for external source
+
+	3 signals available:
+		1) ACLK
+		2) MCLK
+		3) SMCLK
+MSP430X2XXXX
+	2/3/4 clock sources:
+		1) LFXT1CLK: low frequency oscillator for external source
+		2) XT2CLK: optional high frequency oscillator for external source
+		3) DCLOCK: internal digitally controlled oscillator
+		4) VLOCLK: internal low power, low frequency oscillator (~12kHz)
+	
+	3 signals available: 
+		1) ACLK
+		2) MCLK
+		3) SMCLK
