@@ -45,9 +45,13 @@
 
 
 void setDCOFrequencyRange(unsigned char bits);
-void setDCOPrescaler(unsigned char bits);
+void setDCOTap(unsigned char bits);
 
+#if MSP == F5529
+void setDCOPrescaler(unsigned char bits);
 void setUpFLL(unsigned char mult, unsigned char reference, unsigned char referenceDivider);
+void outputACLK(unsigned char div);
+#endif
 
 void selectACLKSource(unsigned char source);
 void selectSMCLKSource(unsigned char source);
@@ -57,5 +61,4 @@ void selectSMCLKDiv(unsigned char div);
 void selectMCLKDiv(unsigned char div);
 
 
-void outputACLK(unsigned char div);
 #endif /* SHERWINS_LIB_CLK_H_ */

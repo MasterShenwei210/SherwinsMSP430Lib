@@ -71,8 +71,8 @@ void setSMCLK(unsigned char source, unsigned char div) {
 
 void setMCLK(unsigned char source, unsigned char div) {
 #if MSP == F5529
-    BCSCTL4 |= source;
-    BCSCTL5 |= div;
+    UCSCTL4 |= source;
+    UCSCTL5 |= div;
 
 #elif MSP == G2231
     BCSCTL2 |= source << 6;
