@@ -340,11 +340,11 @@ void enableHighToLowInterrupt(unsigned char port, unsigned char pin) {
     if (port == 1) {
         P1IE |= bit;
         P1IES |= bit;
-        //__enable_interrupt();
+        __enable_interrupt();
     } else if (port == 2) {
         P2IE |= bit;
         P2IES |= bit;
-        //__enable_interrupt();
+        __enable_interrupt();
     }
 #endif
 }
@@ -355,11 +355,11 @@ void enableLowToHighInterrupt(unsigned char port, unsigned char pin) {
     if (port == 1) {
         P1IE |= bit;
         P1IES &= ~bit;
-        //__enable_interrupt();
+        __enable_interrupt();
     } else if (port == 2) {
         P2IE |= bit;
         P2IES &= ~bit;
-        //__enable_interrupt();
+        __enable_interrupt();
     }
 #endif
 }
@@ -367,10 +367,8 @@ void setISR(unsigned char port, void (*isr)(void)) {
 #if MSP == F5529 || MSP == G2231
     if (port == 1) {
         port_1_isr = isr;
-        __enable_interrupt();
     } else if (port == 2) {
         port_2_isr = isr;
-        __enable_interrupt();
     }
 #endif
 }

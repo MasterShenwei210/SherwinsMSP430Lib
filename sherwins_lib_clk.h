@@ -36,7 +36,7 @@
 #define FLLDIV_12       0X04
 #define FLLDIV_16       0X05
 
-#define DIV_1           0X00
+#define DIV_1           0X00    //works for prescaler as well.
 #define DIV_2           0X01
 #define DIV_4           0x02
 #define DIV_8           0X03
@@ -53,12 +53,8 @@ void setUpFLL(unsigned char mult, unsigned char reference, unsigned char referen
 void outputACLK(unsigned char div);
 #endif
 
-void selectACLKSource(unsigned char source);
-void selectSMCLKSource(unsigned char source);
-void selectMCLKSource(unsigned char source);
-void selectACLKDiv(unsigned char div);
-void selectSMCLKDiv(unsigned char div);
-void selectMCLKDiv(unsigned char div);
-
+void setACLK(unsigned char source, unsigned char div);
+void setSMCLK(unsigned char source, unsigned char div);
+void setMCLK(unsigned char source, unsigned char div);
 
 #endif /* SHERWINS_LIB_CLK_H_ */
